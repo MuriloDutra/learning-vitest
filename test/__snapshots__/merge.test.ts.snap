@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Deep merge with overlaps 1`] = `
+{
+  "accounts": {
+    "github": "unknown",
+    "twitter": "murilex",
+  },
+  "name": "Murilo Dutra",
+}
+`;
