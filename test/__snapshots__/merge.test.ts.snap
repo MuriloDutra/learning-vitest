@@ -6,6 +6,12 @@ exports[`Deep merge with overlaps 1`] = `
     "github": "unknown",
     "twitter": "murilex",
   },
+  "languages": [
+    "javascript",
+    "typescript",
+    "vue",
+    "react",
+  ],
   "name": "Murilo Dutra",
 }
 `;

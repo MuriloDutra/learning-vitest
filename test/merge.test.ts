@@ -25,8 +25,15 @@ test("Shallow merge with arrays", () => {
 
 test("Deep merge with overlaps", () => {
   const merged = deepMerge(
-    { name: "Murilo Dutra", accounts: { github: "unknown" } },
-    { accounts: { twitter: "murilex" } }
+    {
+      name: "Murilo Dutra",
+      accounts: { github: "unknown" },
+      languages: ["javascript"],
+    },
+    {
+      accounts: { twitter: "murilex" },
+      languages: ["typescript", "vue", "react"],
+    }
   );
   // expect(merged).toEqual({
   //   name: "Murilo Dutra",
