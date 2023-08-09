@@ -35,14 +35,36 @@ test("Deep merge with overlaps", () => {
       languages: ["typescript", "vue", "react"],
     }
   );
-  // expect(merged).toEqual({
-  //   name: "Murilo Dutra",
-  //   accounts: {
-  //     github: "unknown",
-  //     twitter: "murilex",
-  //   },
-  // });
   expect(merged).toMatchSnapshot();
+});
+
+test("Deep merge - inlineSnapshot", () => {
+  const merged = deepMerge(
+    {
+      name: "Murilo Dutra",
+      accounts: { github: "unknown" },
+      languages: ["javascript"],
+    },
+    {
+      accounts: { twitter: "murilex" },
+      languages: ["angular", "vue", "react"],
+    }
+  );
+  expect(merged).toMatchInlineSnapshot(`
+    {
+      "accounts": {
+        "github": "unknown",
+        "twitter": "murilex",
+      },
+      "languages": [
+        "javascript",
+        "angular",
+        "vue",
+        "react",
+      ],
+      "name": "Murilo Dutra",
+    }
+  `);
 });
 
 test("Throws errors on merging two different types", () => {
